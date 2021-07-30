@@ -1,0 +1,60 @@
+.App {
+  text-align: center;
+  padding: 1vh;
+  height: 100vh;
+}
+
+.cell {
+  display: inline-block;
+  border: 1px solid black;
+  padding: 2vw;
+}
+
+.cell.clickable {
+  cursor: pointer;
+}
+
+.cell.clickable:hover {
+  background-color: #ccc;
+}
+
+.cell.selected, .cell.free {
+  background-color: #ddd;
+}
+
+.container {
+  display: grid;
+  height: 98vh;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 5px 5px;
+  /* justify-content: stretch;  */
+  align-content: stretch;    
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . . . ."
+    ". . . . ."
+    ". . . . ."
+    ". . . . ."
+    ". . . . .";
+}
+
+.victory-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.victory-box {
+  position: fixed;
+  padding: 5vh 10vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  box-shadow: lightslategray;
+
+}
